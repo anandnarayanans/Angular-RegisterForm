@@ -1,0 +1,92 @@
+<div class="container">
+    <form [formGroup]="Empregister" (ngSubmit)="onSubmit()">
+        <mat-stepper [linear]="isLinear" #stepper>
+
+            <mat-step [stepControl]="Basicform" label="Fill Basic Details">
+
+                <div formGroupName="basic">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" placeholder="First name" formControlName="firstname" [(ngModel)]="Firstname">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" placeholder="Last name" formControlName="lastname" [(ngModel)]="Lastname">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Age</mat-label>
+                        <input matInput type="number" placeholder="Age" formControlName="age" [(ngModel)]="Age">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+
+                </div>
+            </mat-step>
+
+            <mat-step [stepControl]="contactform" label="Fill out contact info">
+
+                <div formGroupName="contact">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" placeholder="Email" formControlName="email" [(ngModel)]="Email">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Phone</mat-label>
+                        <input matInput type="number" formControlName="phone" placeholder="Phone" [(ngModel)]="Phone">
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Location</mat-label>
+                        <input matInput type="text" formControlName="location" placeholder="Location" [(ngModel)]="Location">
+                        <mat-icon matSuffix>home</mat-icon>
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+                        <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    </div>
+
+                </div>
+            </mat-step>
+
+            <mat-step [stepControl]="addressform" label="Fill out address">
+
+                <div formGroupName="address">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Street</mat-label>
+                        <input matInput type="text" formControlName="street" placeholder="street" [(ngModel)]="Street">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>City</mat-label>
+                        <input matInput type="text" formControlName="city" placeholder="City" [(ngModel)]="City">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>PIN</mat-label>
+                        <input matInput type="number" formControlName="pin" placeholder="Pin" [(ngModel)]="Pin">
+                    </mat-form-field>
+
+                    <div>
+                        <button mat-raised-button color="primary" matStepperPrevious>Back</button> |
+                        <button mat-raised-button (click)="openDialog()" color="accent">Submit</button>
+                    </div>
+
+                </div>
+            </mat-step>
+        </mat-stepper>
+    </form>
+</div>
+<!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+
+<app-data-table [parentData]="AllData"></app-data-table>

@@ -1,0 +1,13 @@
+.mat-form-field {
+    width: 100%;
+}
+
+.container {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://rtupapers.in/Fresher-Jobs/kaar.jpg)
+}
+
+mat-stepper {
+    opacity: 70%;
+}

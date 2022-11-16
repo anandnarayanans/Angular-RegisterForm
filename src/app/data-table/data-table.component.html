@@ -1,0 +1,32 @@
+<div>
+    <hr>
+    <br>
+
+    <table class="table table-bordered">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Location</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Pin </th>
+
+
+        <tbody *ngFor="let n of data">
+            <td>{{n.Firstname}}</td>
+            <td>{{n.Lastname}}</td>
+            <td>{{n.Age}}</td>
+            <td>{{n.Email}}</td>
+            <td>{{n.Phone}}</td>
+            <td>{{n.Location}}</td>
+            <td>{{n.Street}}</td>
+            <td>{{n.City}}</td>
+            <td>{{n.Pin}}</td>
+
+        </tbody>
+    </table>
+</div>
+
+<hr>
